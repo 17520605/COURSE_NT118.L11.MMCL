@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:background="@color/colorbackground">
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/signuplogo" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="156dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageView4"
+            app:srcCompat="@drawable/sign_up" />
+
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="307dp"
+            android:layout_height="47dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/textfild_input"
+            android:elevation="2dp"
+            android:ems="10"
+            android:hint="FullName"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:inputType="text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+
+        <EditText
+            android:id="@+id/gender"
+            android:layout_width="307dp"
+            android:layout_height="47dp"
+            android:background="@drawable/textfild_input"
+            android:elevation="2dp"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:hint="Gender"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:inputType="text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/name" />
+
+        <EditText
+            android:id="@+id/phone"
+            android:layout_width="307dp"
+            android:layout_height="47dp"
+            android:background="@drawable/textfild_input"
+            android:elevation="2dp"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:hint="Phone"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:inputType="text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/gender" />
+
+        <EditText
+            android:id="@+id/address"
+            android:layout_width="307dp"
+            android:layout_height="47dp"
+            android:background="@drawable/textfild_input"
+            android:elevation="2dp"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:hint="Address"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:inputType="text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/email" />
+
+        <EditText
+            android:id="@+id/confirm_password"
+            android:layout_width="307dp"
+            android:layout_height="47dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/textfild_input"
+            android:elevation="2dp"
+            android:ems="10"
+            android:hint="Confirm Password"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:inputType="text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/password" />
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="307dp"
+            android:layout_height="47dp"
+            android:background="@drawable/textfild_input"
+            android:elevation="2dp"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:hint="Password "
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:inputType="text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/description" />
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="307dp"
+            android:layout_height="47dp"
+            android:background="@drawable/textfild_input"
+            android:elevation="2dp"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:hint="Email"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:inputType="text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/phone" />
+
+        <EditText
+            android:id="@+id/description"
+            android:layout_width="307dp"
+            android:layout_height="47dp"
+            android:background="@drawable/textfild_input"
+            android:elevation="2dp"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:hint="Description"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:inputType="text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/address" />
+
+        <Button
+            android:id="@+id/sign_up_btn"
+            android:layout_width="307dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="28dp"
+            android:background="@drawable/bg_btn"
+            android:text="Sign Up"
+            android:textColor="#fff"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.509"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/confirm_password" />
+
+        <TextView
+            android:id="@+id/sign_in"
+            android:layout_width="77dp"
+            android:layout_height="32dp"
+            android:layout_marginTop="20dp"
+            android:text="SIGN IN"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.176"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sign_up_btn" />
+
+        <ImageView
+            android:id="@+id/btn_back_login"
+            android:layout_width="40dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="4dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/back" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
