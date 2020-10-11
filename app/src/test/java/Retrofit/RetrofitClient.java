@@ -1,4 +1,4 @@
-package com.example.course2kp.Retrofit;
+package Retrofit;
 
 import java.util.concurrent.TimeUnit;
 

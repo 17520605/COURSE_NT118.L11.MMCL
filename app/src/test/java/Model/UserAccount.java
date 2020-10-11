@@ -1,4 +1,4 @@
-package com.example.course2kp.Model;
+package Model;
 
 import java.io.Serializable;
 

@@ -1,6 +1,4 @@
-package com.example.course2kp;
-
-import androidx.appcompat.app.AppCompatActivity;
+package Activity;
 
 import android.app.AlertDialog;
 import android.content.Intent;
@@ -13,13 +11,14 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.course2kp.Model.UserAccount;
-import com.example.course2kp.Retrofit.IMyService;
-import com.example.course2kp.Retrofit.RetrofitClient;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.tutorial_v1.R;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import Model.UserAccount;
 import dmax.dialog.SpotsDialog;
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -29,10 +28,11 @@ import io.reactivex.schedulers.Schedulers;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 
-public class MainActivity extends AppCompatActivity {
-    Button login_btn;
-    TextView sign_up,forgot_password;
-    EditText Email, password;
+
+public class LoginActivity extends AppCompatActivity {
+    Button loginBtn;
+    TextView regisTextView,forgotPassword;
+    EditText tkEditText, mkEditText;
     CompositeDisposable compositeDisposable =new CompositeDisposable();
     IMyService iMyService;
     String TaiKhoan, MatKhau;
@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-        setContentView(R.layout.login);
+        setContentView(R.layout.activity_login);
 
         setUIReference();
 
@@ -52,15 +52,15 @@ public class MainActivity extends AppCompatActivity {
         iMyService=retrofitClient.create(IMyService.class);
         alertDialog= new SpotsDialog.Builder().setContext(this).build();
 
-        sign_up.setOnClickListener(new View.OnClickListener() {
+        regisTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(MainActivity.this,RegisterActivity.class);
+                Intent intent=new Intent(LoginActivity.this,RegisterActivity.class);
                 startActivity(intent);
             }
         });
 
-        login_btn.setOnClickListener(new View.OnClickListener() {
+        loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(CheckValidInput())
@@ -70,8 +70,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void Login() {
-        login_btn.setClickable(false);
-        login_btn.setEnabled(false);
+        loginBtn.setClickable(false);
+        loginBtn.setEnabled(false);
 
         try {
             // alertDialog.show();
@@ -142,9 +142,9 @@ public class MainActivity extends AppCompatActivity {
 
                                         }
                                     }, 500);
-                            Toast.makeText(MainActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
-                            login_btn.setClickable(true);
-                            login_btn.setEnabled(true);
+                            Toast.makeText(LoginActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                            loginBtn.setClickable(true);
+                            loginBtn.setEnabled(true);
                         }
 
                         @Override
@@ -159,7 +159,7 @@ public class MainActivity extends AppCompatActivity {
 
 
                             if(flag==true) {
-                                Intent intent = new Intent(MainActivity.this, HomeScreenActivity.class);
+                                Intent intent = new Intent(LoginActivity.this, HomeScreenActivity.class);
                                 intent.putExtra("userAcc", userAccount);
                                 intent.putExtra("change",0);
                                 startActivity(intent);
@@ -167,9 +167,9 @@ public class MainActivity extends AppCompatActivity {
 
                             }
                             else {
-                                Toast.makeText(MainActivity.this, "Tài khoản hoặc mật khẩu không đúng", Toast.LENGTH_SHORT).show();
-                                login_btn.setClickable(true);
-                                login_btn.setEnabled(true);
+                                Toast.makeText(LoginActivity.this, "Tài khoản hoặc mật khẩu không đúng", Toast.LENGTH_SHORT).show();
+                                loginBtn.setClickable(true);
+                                loginBtn.setEnabled(true);
                             }
                         }
                     });
@@ -181,29 +181,29 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setUIReference() {
-        login_btn=findViewById(R.id.login_btn);
-        sign_up=findViewById(R.id.sign_up);
-        Email=findViewById(R.id.Email);
-        password=findViewById(R.id.password);
-        forgot_password=findViewById(R.id.forgot_password);
+        loginBtn=findViewById(R.id.loginBtn);
+        regisTextView=findViewById(R.id.regText);
+        tkEditText=findViewById(R.id.TaiKhoanEditText);
+        mkEditText=findViewById(R.id.MatKhauEditText);
+        forgotPassword=findViewById(R.id.forgotPass);
     }
     private boolean CheckValidInput() {
         Boolean valid=true;
-        TaiKhoan=Email.getText().toString();
-        MatKhau=password.getText().toString();
+        TaiKhoan=tkEditText.getText().toString();
+        MatKhau=mkEditText.getText().toString();
         if(TaiKhoan.isEmpty() ||TaiKhoan.length() < 6 || TaiKhoan.length() >40 )
         {
-            Email.setError("Từ 6 đến 40 ký tự");
+            tkEditText.setError("Từ 6 đến 40 ký tự");
             valid = false;
         } else {
-            Email.setError(null);
+            tkEditText.setError(null);
         }
         if(MatKhau.isEmpty() || MatKhau.length() <8 ||MatKhau.length()>16 )
         {
-            password.setError("Mật khẩu có 8 đến 16 ký tự");
+            mkEditText.setError("Mật khẩu có 8 đến 16 ký tự");
             valid = false;
         } else {
-            password.setError(null);
+            mkEditText.setError(null);
         }
         return valid;
     }

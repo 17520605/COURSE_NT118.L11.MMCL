@@ -1,4 +1,4 @@
-package com.example.course2kp.Retrofit;
+package Retrofit;
 
 import io.reactivex.Observable;
 import retrofit2.Response;
